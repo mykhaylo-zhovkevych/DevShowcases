@@ -1,0 +1,30 @@
+.page__header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--header-height);
+  width: auto;
+  padding: 0.125rem 1.5rem;
+  z-index: 1000;
+  box-sizing: border-box;
+  border: var(--border-size) solid var(--bauhaus-yellow);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--color-background);
+}
+
+.page-header__nav {
+  display: flex;
+  align-items: center;
+}
+
+.page-header__nav--right {
+  justify-content: flex-end;
+  gap: 1.25rem;
+}
+
+.page-header__nav--left {
+  justify-content: flex-start;
+}

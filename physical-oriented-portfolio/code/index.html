@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="stylesheet" href="./src/styles/index.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+  </head>
+
+  <body class="page">
+    <header class="page__header" id="webHeader">
+      <nav class="page-header__nav page-header__nav--left">
+          <h2>#</h2>
+          <h2>#</h2>
+          <h2>#</h2>
+      </nav>
+
+      <nav class="page-header__nav page-header__nav--right">
+        <a class="page-header__link" href="#aboutme">Über mich selbst</a>
+        <a class="page-header__link" href="#showcase">Projekte</a>
+        <a class="page-header__link" href="#contact">Kontakt</a>
+        <a class="page-header__link" href="#impressum">Impressum</a>
+      </nav>
+    </header>
+
+    <main class="page__main">
+      <section class="section--intoart">
+          <div class="intoart-grid" id="intoartGrid"></div>
+      </section>
+
+      <section class="section section--aboutme">
+        <div class="aboutme-grid" id="aboutmeGrid"></div>
+      </section>
+
+      <section class="section section--showcase" id="showcase">
+        <div class="showcase__panels" id="showcasePanels">
+          <article id="showcase-art" class="showcase__panel showcase__panel--art">
+            <div class="showcase-grid" id="showcaseArtGrid"></div>
+          </article>
+
+          <article id="showcase-self" class="showcase__panel showcase__panel--self">
+            <div class="showcase-grid" id="showcaseSelfGrid"></div>
+          </article>
+
+          <article id="showcase-projects" class="showcase__panel showcase__panel--projects">
+            <div class="showcase-grid" id="showcaseProjectsGrid"></div>
+          </article>
+        </div>
+      </section>
+
+
+      <section class="section section--contact" id="contact">
+        <div class="contact-grid" id="contactGrid"></div>
+      </section>
+    </main>
+
+    <footer class="footer footer--impressum" id="impressum">
+        <div class="impressum-grid" id="impressumGrid"></div>
+    </footer>
+
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>

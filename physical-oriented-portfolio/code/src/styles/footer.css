@@ -1,0 +1,29 @@
+.footer--impressum {
+  padding: 0;
+}
+
+.footer {
+  min-height: 50vh;
+}
+
+.impressum-grid {
+  display: grid;
+  width: 100%;
+  height: 50vh;
+  border: var(--border-size) solid var(--bauhaus-yellow);
+  box-sizing: border-box;
+}
+
+
+.impressum-grid .tile {
+  border: var(--tile-border-size) solid var(--tile-border-color);
+  background: var(--color-background);
+  position: relative;
+  overflow: hidden;
+}
+
+
+.impressum-grid{
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}

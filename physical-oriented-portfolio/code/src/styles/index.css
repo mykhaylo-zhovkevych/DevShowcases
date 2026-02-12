@@ -1,0 +1,54 @@
+@import "./main.css";
+@import "./footer.css";
+@import "./header.css";
+
+:root {
+  --header-height: 6rem;
+
+  --space-page-x: 1.5rem;
+  --space-section-y: 2.25rem;
+
+  --bauhaus-black: #000;
+  --bauhaus-red: #be1e2d;
+  --bauhaus-yellow: #ffde17;
+  --bauhaus-white: #fff;
+  --bauhaus-blue: #21409a;
+
+  /* Base colors */
+  --color-background: var(--bauhaus-white);
+  --color-text: var(--bauhaus-black);
+
+  /* Borders */
+  --border-size: 0.125rem;
+  --tile-border-size: 0.125rem;
+  --border-color: var(--bauhaus-yellow);
+  --tile-border-color: var(--bauhaus-yellow);
+
+  --radius-md: 1rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background: var(--color-background);
+  color: var(--color-text);
+}
+
+a {
+  color: inherit;
+}
+
+.page {
+  min-height: 100vh;
+}
