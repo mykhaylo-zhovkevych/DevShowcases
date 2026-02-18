@@ -7,15 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio</title>
   </head>
-
   <body class="page">
     <header class="page__header" id="webHeader">
       <nav class="page-header__nav page-header__nav--left">
-          <h2>#</h2>
-          <h2>#</h2>
-          <h2>#</h2>
+          <div class="bauhaus-box" id="redBox"></div>
+          <div class="bauhaus-box" id="yellowBox"></div>
+          <div class="bauhaus-box" id="blueBox"></div>
       </nav>
-
       <nav class="page-header__nav page-header__nav--right">
         <a class="page-header__link" href="#aboutme">Über mich selbst</a>
         <a class="page-header__link" href="#showcase">Projekte</a>
@@ -23,42 +21,287 @@
         <a class="page-header__link" href="#impressum">Impressum</a>
       </nav>
     </header>
-
     <main class="page__main">
       <section class="section--intoart">
           <div class="intoart-grid" id="intoartGrid"></div>
       </section>
-
-      <section class="section section--aboutme">
+      <section class="section section--aboutme" id="aboutme">
         <div class="aboutme-grid" id="aboutmeGrid"></div>
       </section>
-
       <section class="section section--showcase" id="showcase">
         <div class="showcase__panels" id="showcasePanels">
-          <article id="showcase-art" class="showcase__panel showcase__panel--art">
-            <div class="showcase-grid" id="showcaseArtGrid"></div>
-          </article>
-
-          <article id="showcase-self" class="showcase__panel showcase__panel--self">
-            <div class="showcase-grid" id="showcaseSelfGrid"></div>
-          </article>
-
           <article id="showcase-projects" class="showcase__panel showcase__panel--projects">
             <div class="showcase-grid" id="showcaseProjectsGrid"></div>
           </article>
+          <article id="showcase-skills" class="showcase__panel showcase__panel--skills">
+            <div class="showcase-grid" id="showcaseSkillsGrid"></div>
+          </article>
+          <article id="showcase-self" class="showcase__panel showcase__panel--self">
+            <div class="showcase-grid" id="showcaseSelfGrid"></div>
+          </article>
         </div>
       </section>
-
-
       <section class="section section--contact" id="contact">
         <div class="contact-grid" id="contactGrid"></div>
       </section>
     </main>
-
     <footer class="footer footer--impressum" id="impressum">
         <div class="impressum-grid" id="impressumGrid"></div>
     </footer>
+    <!-- Template One-->
+    <template id="tpl-intoart-hero">
+      <div class="featured__content intro-hero">
+        <h2 class="intro-hero__title" data-field="title"></h2>
+      </div>
+    </template>
+    <!-- Template Two-->
+    <template id="tpl-aboutme-hero">
+      <div class="featured__content aboutme-hero">
+        <img class="aboutme-hero__img" data-attr="src:image" alt="Me" />
+      </div>
+    </template>
+    <template id="tpl-aboutme-side">
+      <div class="featured__content aboutme-side">
+        <h2 class="aboutme-side__title" data-field="title"></h2>
+        <p class="aboutme-side__desc" data-field="description"></p>
+      </div>
+    </template>
+     <!-- Template Four-->
+    <template id="tpl-projects-hero">
+      <div class="featured__content projects-hero" data-projects-root>
+        <header class="projects-hero__header">
+          <h2 class="projects-hero__title" data-field="title"></h2>
+          <p class="projects-hero__subtitle" data-field="subtitle"></p>
+        </header>
 
-    <script type="module" src="./src/main.js"></script>
+          <div class="projects-hero__list" data-list="projects"></div>
+
+        <div class="projects-preview" data-preview aria-hidden="true">
+          <div class="projects-preview__stack" data-list="previews"></div>
+        </div>
+      </div>
+    </template>
+
+    <template id="tpl-project-row">
+      <div class="project-row" data-project-row data-attr="data-index:index">
+        <div class="project-row__overlay" data-row-overlay></div>
+       
+          <a class="project-row__top" data-attr="href:url" target="_blank" rel="noreferrer">
+            <h3 class="project-row__title" data-field="name"></h3>
+            <span class="project-row__arrow">↗</span>
+          </a>
+
+          <div class="project-row__divider"></div>
+          <div class="project-row__meta" data-list="frameworks"></div>
+      </div>
+    </template>
+
+    <template id="tpl-project-preview">
+      <img class="projects-preview__img"
+          data-preview-item
+          data-attr="src:preview"
+          alt="preview" />
+    </template>
+
+    <template id="tpl-framework-chip">
+      <span class="framework-chip" data-field="label"></span>
+    </template>
+    <!-- Template Fith-->
+    <template id="tpl-skills-hero">
+      <section class="featured__content skills-hero" data-skills-root>
+        <header class="skills-hero__header">
+          <h2 class="skills-hero__title" data-field="title"></h2>
+          <p class="skills-hero__subtitle" data-field="subtitle"></p>
+        </header>
+
+        <div class="skills-grid" data-skills-grid data-list="skills"></div>
+
+      </section>
+    </template>
+
+    <template id="tpl-skills-card">
+      <article class="skill-card"
+              data-skill-card
+              data-state="collapsed"
+              tabindex="0"
+              data-attr="data-skill-id:id">
+        <header class="skill-card__top">
+          <div class="skill-card__icon" data-field="icon" data-field-mode="html"></div>
+
+          <div class="skill-card__titles">
+            <h3 class="skill-card__name" data-field="name"></h3>
+            <p class="skill-card__subname" data-field="subname"></p>
+          </div>
+        </header>
+
+        <div class="skill-card__body">
+          <p class="skill-card__desc" data-field="description"></p>
+
+          <div class="skill-card__meter" role="group">
+            <div class="skill-card__meter-row">
+              <span class="skill-card__meter-label" data-field="levelLabel"></span>
+              <span class="skill-card__meter-value" data-field="value"></span>
+            </div>
+
+            <div class="skill-card__bar">
+              <div class="skill-card__bar-fill" data-skill-fill></div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </template>
+
+    <template id="tpl-skills-side">
+      <aside class="featured__content skills-side" data-skills-side>
+        <div class="skills-side__controls" data-skills-controls>
+          <button type="button"
+                  class="skills-side__btn"
+                  data-skills-shuffle
+                  data-field="shuffleLabel"></button>
+        </div>
+      </aside>
+    </template>
+    <!-- Template Six -->
+    <template id="tpl-self-hero">
+      <section class="featured__content self-hero" data-self-root>
+        <header class="self-hero__header">
+          <h2 class="self-hero__title" data-field="title"></h2>
+          <p class="self-hero__subtitle" data-field="subtitle"></p>
+        </header>
+
+        <div class="self-hero__layout" data-self-layout>
+          <div class="self-hero__paragraphs" data-self-paragraphs data-list="paragraphs"></div>
+          <div class="self-hero__icon-rail" data-self-icon-rail data-list="icons"></div>
+        </div>
+      </section>
+    </template>
+
+    <template id="tpl-self-side">
+      <aside class="featured__content self-side" data-self-side>
+        <button type="button"
+                class="self-side__btn"
+                data-self-reveal
+                data-field="revealLabel"></button>
+      </aside>
+    </template>
+
+    <template id="tpl-self-paragraph">
+      <article class="self-paragraph" data-self-paragraph>
+        <h3 class="self-paragraph__title" data-field="paragraphTitle"></h3>
+        <p class="self-paragraph__text" data-field="paragraphText"></p>
+      </article>
+    </template>
+
+    <template id="tpl-self-icon">
+      <div class="self-icon" data-self-icon>
+        <div class="self-icon__box" data-field="icon" data-field-mode="html"></div>
+      </div>
+    </template>
+    <!-- Template Seven -->
+    <template id="tpl-contact-hero">
+      <section class="featured__content contact-hero" data-contact-root>
+        <header class="contact-hero__header">
+          <h2 class="contact-hero__title" data-field="title"></h2>
+          <p class="contact-hero__subtitle" data-field="subtitle"></p>
+        </header>
+
+        <form class="contact-form" data-contact-form novalidate>
+          <div class="contact-form__status is-hidden" data-contact-status role="status" aria-live="polite"></div>
+          <div class="contact-form__errors is-hidden" data-contact-errors role="alert" aria-live="assertive"></div>
+            <div class="contact-form__grid">
+
+            <div class="contact-field">
+              <label class="contact-field__label" for="contact-firstname" data-field="firstNameLabel"></label>
+              <input class="contact-field__input"
+                    id="contact-firstname"
+                    name="firstName"
+                    type="text"
+                    autocomplete="given-name"
+                    required />
+            </div>
+
+            <div class="contact-field">
+              <label class="contact-field__label" for="contact-lastname" data-field="lastNameLabel"></label>
+              <input class="contact-field__input"
+                    id="contact-lastname"
+                    name="lastName"
+                    type="text"
+                    autocomplete="family-name"
+                    required />
+            </div>
+
+            <div class="contact-field">
+              <label class="contact-field__label" for="contact-email" data-field="emailLabel"></label>
+              <input class="contact-field__input"
+                    id="contact-email"
+                    name="email"
+                    type="email"
+                    autocomplete="email"
+                    inputmode="email"
+                    required />
+            </div>
+
+            <div class="contact-field">
+              <label class="contact-field__label" for="contact-phone" data-field="phoneLabel"></label>
+              <input class="contact-field__input"
+                    id="contact-phone"
+                    name="phone"
+                    type="tel"
+                    autocomplete="tel"
+                    inputmode="tel"/>
+            </div>
+
+            <div class="contact-field contact-field--full">
+              <label class="contact-field__label" for="contact-message" data-field="messageLabel"></label>
+              <textarea class="contact-field__textarea"
+                        id="contact-message"
+                        name="message"
+                        rows="6"
+                        required></textarea>
+            </div>
+          </div>
+        </form>
+      </section>
+    </template>
+
+    <template id="tpl-contact-side">
+      <aside class="featured__content contact-side" data-contact-side>
+        <div class="contact-side__controls" data-contact-controls>
+          <button type="button"
+                  class="contact-side__btn"
+                  data-contact-reset
+                  data-field="resetLabel"></button>
+          
+          <button type="button"
+                  class="contact-side__btn"
+                  data-contact-send
+                  data-field="sendLabel"></button>
+        </div>
+      </aside>
+    </template>
+    <!-- Template Eight -->
+    <template id="tpl-impressum-hero">
+      <section class="featured__content impressum-hero" data-impressum-root>
+        <div class="impressum-hero__layout">
+          <div class="impressum-hero__text">
+            <h3 class="impressum-hero__title" data-field="title"></h3>
+            <p class="impressum-hero__body" data-field="body"></p>
+          </div>
+
+          <div class="impressum-hero__links" data-impressum-links data-list="links"></div>
+        </div>
+      </section>
+    </template>
+
+    <template id="tpl-impressum-link">
+      <a class="impressum-link"
+        data-attr="href:url"
+        target="_blank"
+        rel="noopener noreferrer">
+        <div class="impressum-link__icon" data-field="icon" data-field-mode="html"></div>
+        <div class="impressum-link__label" data-field="label"></div>
+      </a>
+    </template>
+    <script type="module" src="./src/mainOrchestrator.js"></script>
   </body>
 </html>

@@ -1,4 +1,3 @@
-// physical-oriented-portfolio/code/src/scripts/header.js
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 

@@ -2,30 +2,101 @@
 @import "./footer.css";
 @import "./header.css";
 
+@font-face {
+  font-family: "Futura-Cyrillic-Medium";
+  src: url("../assets/fonts/FuturaCyrillicBold.ttf") format("truetype");
+  font-weight: var(--weight-bold);
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Futura-Cyrillic-Bold";
+  src: url("../assets/fonts/FuturaCyrillicExtraBold.ttf") format("truetype");
+  font-weight: var(--weight-bold);
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --header-height: 6rem;
+  --vh-panel: 100vh;
 
   --space-page-x: 1.5rem;
   --space-section-y: 2.25rem;
 
+  --space-1: 0.5rem;
+  --space-2: 0.75rem;
+  --space-3: 1rem;
+  --space-4: 1.25rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+
+  --pad-hero: var(--space-6); 
+  --pad-project: var(--space-4);
+  --gap-grid: 0.875rem;
+  --gap-layout: 1.25rem;              
+  --radius-sm: 0.625rem;
+  --radius-md: 1rem;
+  --radius-pill: 999px;
+
+  --font-display-text: "Futura-Cyrillic-Medium", Arial, sans-serif;
+  --font-display-title: "Futura-Cyrillic-Bold", Arial, sans-serif;
+
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.85rem;
+  --font-size-base: 1rem;
+  --font-size-md: 1.25rem;
+  --font-size-lg: 1.5rem;
+
+  --line-base: 1;
+  --line-loose: 1.4;
+
+  --letter-wide: 0.06em;
+  --weight-bold: 700;
+
+  /* Bauhaus palette */
   --bauhaus-black: #000;
   --bauhaus-red: #be1e2d;
   --bauhaus-yellow: #ffde17;
   --bauhaus-white: #fff;
   --bauhaus-blue: #21409a;
 
-  /* Base colors */
   --color-background: var(--bauhaus-white);
   --color-text: var(--bauhaus-black);
 
-  /* Borders */
-  --border-size: 0.125rem;
-  --tile-border-size: 0.125rem;
-  --border-color: var(--bauhaus-yellow);
+  --color-overlay: var(--bauhaus-black);   
+  --color-overlay-text: var(--bauhaus-white);
+
+  --color-muted: rgba(0, 0, 0, 0.75);
+  --color-subtle: rgba(0, 0, 0, 0.08);
+
+  --border-size: 0.2rem;          
+  --border-thin: 1px;            
+  --border-strong-color: var(--bauhaus-black);
+
   --tile-border-color: var(--bauhaus-yellow);
 
-  --radius-md: 1rem;
+  --stroke-strong: var(--border-size) solid var(--border-strong-color);
+  --stroke-tile: var(--border-size) solid var(--tile-border-color);
+
+  --btn-pad-y: 0.5rem;
+  --btn-pad-x: 0.75rem;
+  --btn-bg: var(--color-background);
+  --btn-text: var(--color-text);
+  --btn-border: var(--border-size) solid var(--border-strong-color);
+
+  --hover-bg: var(--color-overlay);
+  --hover-text: var(--color-overlay-text);
+
+  --t-slow: 300ms;
+  --preview-w: 640px;
+  --preview-h: 360px;
+  --z-base: 0;
+  --z-header: 100;
+  --z-overlay: 500;
 }
+
 
 *,
 *::before,
@@ -40,7 +111,7 @@ body {
 
 body {
   margin: 0;
-  font-family: var(--font-sans);
+  font-family: var(--font-display-title);
   background: var(--color-background);
   color: var(--color-text);
 }
@@ -50,5 +121,5 @@ a {
 }
 
 .page {
-  min-height: 100vh;
+  min-height: 100dvh;
 }

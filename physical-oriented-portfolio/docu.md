@@ -12,11 +12,9 @@ Small interactive elements that user can drag. Movement should feel physical wit
 A section of the page where vertical scrolling drives horizontal movement. Elements inside this section animate based on scroll progress, creating a sense of spatial navigation.
 3. **Animated Text**
 Text elements that animate into view, or interations.
-4. **Animated Preload**
-A short, lasting prelaod that moves upword and revels page content.
 
 ## Plan 
 | Date | Estimated Task | Expected Result | Actual Result |
 | 10.02/11.02 | Design and Setup | A solid design idea and project stracture | Overall Bauhaus for design that allows a uniform space for animations |
-| 13.02/15.02 | Working ShowCase | Good randering website with user usability | ------------- |
-| 15.02 | Refactoring and rethinking |  Some code changes | ------------- |
+| 13.02/16.02 | Working ShowCase | Good randering website with user usability | yes |
+| 17/18.02 | Refactoring and rethinking |  Some code changes | some added |

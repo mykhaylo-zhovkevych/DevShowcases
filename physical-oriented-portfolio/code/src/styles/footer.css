@@ -3,27 +3,26 @@
 }
 
 .footer {
-  min-height: 50vh;
+  min-height: 50dvh;
 }
 
 .impressum-grid {
   display: grid;
   width: 100%;
-  height: 50vh;
-  border: var(--border-size) solid var(--bauhaus-yellow);
-  box-sizing: border-box;
+  height: 50dvh;
+
+  border: var(--stroke-tile);
+  background: var(--color-background);
+
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
 }
 
 
 .impressum-grid .tile {
-  border: var(--tile-border-size) solid var(--tile-border-color);
+  border: var(--stroke-tile);
   background: var(--color-background);
+
   position: relative;
   overflow: hidden;
-}
-
-
-.impressum-grid{
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(2, 1fr);
 }
