@@ -123,3 +123,7 @@ a {
 .page {
   min-height: 100dvh;
 }
+
+html { 
+  scroll-behavior: smooth; 
+}

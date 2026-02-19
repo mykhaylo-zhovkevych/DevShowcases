@@ -10,7 +10,7 @@ export function initShowcaseHorizontalScroll() {
 
 const getMaxX = () => article.scrollWidth - section.clientWidth;
 
-  if (getMaxX() <= 0) return;
+if (getMaxX() <= 0) return;
 
 gsap.to(article, {
   x: () => -getMaxX(),

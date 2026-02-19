@@ -28,6 +28,7 @@ import { initProjectsHover } from "./scripts/helpers/projectsHoverManager.js";
 import { initSkillsFlip } from "./scripts/helpers/skillsFlipManager.js";
 import { initSelfIconRailReveal } from "./scripts/helpers/selfRevealManager.js";
 import { initContactForm } from "./scripts/helpers/contactManager.js";
+import { initTitleAnimations } from "./scripts/animationManager.js";
 
 import meImage from './assets/Me.jpg'
 import projectPic01 from './assets/projectsAssets/pic01.png'
@@ -400,7 +401,7 @@ const built = buildAllGrids(gridConfigs);
 const intoArt = built.find(x => x.elId === "intoartGrid");
 if (intoArt) {
   initFeaturedTileContent(intoArt.el, intoArt.data);
-
+  initTitleAnimations(intoArt.el);
   // eye, arrows
   mountSvgIntoSlot(intoArt.el, 3, SVG_TEMPLATES.eye);
   mountSvgIntoSlot(intoArt.el, 4, SVG_TEMPLATES.arrows);
@@ -409,12 +410,12 @@ if (intoArt) {
   setupEyeFollow(intoArt.el);
   setupArrows();
   setupStars();
+
 }
 
 const aboutMe = built.find(x => x.elId === "aboutmeGrid");
 if (aboutMe) {
   initFeaturedTileContent(aboutMe.el, aboutMe.data);
-
   // circle, disk
   mountSvgIntoSlot(aboutMe.el, 18, SVG_TEMPLATES.circles);
   mountSvgIntoSlot(aboutMe.el, 5, SVG_TEMPLATES.disk);
@@ -430,6 +431,7 @@ if (projectsGrid) {
 
   // morphBoxes, randomCircles
   initFeaturedTileContent(projectsGrid.el, projectsGrid.data);
+  initTitleAnimations(projectsGrid.el);
   mountSvgIntoSlot(projectsGrid.el, 12, SVG_TEMPLATES.morphBoxes);
   mountSvgIntoSlot(projectsGrid.el, 23, SVG_TEMPLATES.randomCircles);
 
@@ -443,7 +445,7 @@ if (projectsGrid) {
 const skillsGrid = built.find(x => x.elId === "showcaseSkillsGrid");
 if (skillsGrid) {
   initFeaturedTileContent(skillsGrid.el, skillsGrid.data);
-
+  initTitleAnimations(skillsGrid.el);
   // halfcircles, lines
   mountSvgIntoSlot(skillsGrid.el, 4, SVG_TEMPLATES.halfCircles);
   mountSvgIntoSlot(skillsGrid.el, 23, SVG_TEMPLATES.lines);
@@ -460,6 +462,7 @@ const selfGrid = built.find(x => x.elId === "showcaseSelfGrid");
 if (selfGrid) {
   initFeaturedTileContent(selfGrid.el, selfGrid.data);
   initSelfIconRailReveal(selfGrid.el);
+  initTitleAnimations(selfGrid.el);
 
   // eye, stretchBars
   mountSvgIntoSlot(selfGrid.el, 5, SVG_TEMPLATES.eye);
@@ -473,7 +476,7 @@ if (selfGrid) {
 const contact = built.find(x => x.elId === "contactGrid");
 if (contact) {
   initFeaturedTileContent(contact.el, contact.data);
-
+  initTitleAnimations(contact.el);
   // followingStars, stars
   mountSvgIntoSlot(contact.el, 22, SVG_TEMPLATES.followingStars);
   mountSvgIntoSlot(contact.el, 5, SVG_TEMPLATES.stars);
@@ -487,8 +490,9 @@ if (contact) {
 const impressum = built.find(x => x.elId === "impressumGrid");
 if (impressum) {
 
-  //eclipse
   initFeaturedTileContent(impressum.el, impressum.data);
+  initTitleAnimations(impressum.el);
+  //eclipse
   mountSvgIntoSlot(impressum.el, 4, SVG_TEMPLATES.ellipse); 
 
   initGridDragLayour(impressum.el);
