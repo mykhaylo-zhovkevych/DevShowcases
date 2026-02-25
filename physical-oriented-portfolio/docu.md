@@ -13,6 +13,8 @@ A section of the page where vertical scrolling drives horizontal movement. Eleme
 3. **Animated Text**
 Text elements that animate into view, or interations.
 
+For the Draggable Micro Elements Interactions I got inspired by https://codepen.io/shunyadezain/pen/qBzJzQg 
+
 ## Plan 
 
 | Date              | Estimated Task               | Expected Result                                           | Actual Result                                                     |
