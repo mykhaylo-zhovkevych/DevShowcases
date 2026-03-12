@@ -291,7 +291,7 @@ const gridConfigs = [
               },
               {
                 paragraphTitle: "Ziele",
-                paragraphText: "Für mein nächstes Praktikum wünsche ich mir ein Umfeld mit gutem Mentoring und ehrlichem Feedback. Mir ist wichtig, fachlich gefordert zu werden, Zusammenhänge verstehen zu dürfen und schrittweise mehr Verantwortung zu übernehmen."
+                paragraphText: "Für mein nächstes Praktikum wünsche ich mir ein Umfeld mit gutem Mentoring und strukturiertem Feedback. Mir ist wichtig, fachlich gefordert zu werden, Zusammenhänge verstehen zu dürfen und schrittweise mehr Verantwortung zu übernehmen."
               }
             ],
             icons: [
